@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Payment QR Code</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .qr-preview {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .qr-preview img {
+            max-width: 300px;
+            width: 100%;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 10px;
+            background: white;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        .info {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Setup Payment QR Code</h1>
+        <div class="info">
+            <strong>QR Code Found!</strong><br>
+            Your QR code image has been detected. Click the button below to set it up.
+        </div>
+        
+        <div class="qr-preview">
+            <h3>QR Code Preview:</h3>
+            <img src="images/02c51b17277eed4b073ce8c5b00ccdb5.jpg" alt="Payment QR Code" id="qrPreview">
+            <p style="color: #7f8c8d; margin-top: 10px;">This QR code will appear on invoice and cart pages</p>
+        </div>
+        
+        <button onclick="setupQRCode()">Set This as Payment QR Code</button>
+        <button onclick="window.location.href='index.html'" style="background: #95a5a6;">Go to Menu</button>
+    </div>
+
+    <script>
+        function setupQRCode() {
+            const qrCodePath = 'images/02c51b17277eed4b073ce8c5b00ccdb5.jpg';
+            localStorage.setItem('paymentQRCode', qrCodePath);
+            
+            alert('Payment QR code has been set successfully!\n\nIt will now appear on:\n- Invoice page\n- Cart page\n- Menu page (in cart section)');
+            
+            // Redirect to menu
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>
+
+

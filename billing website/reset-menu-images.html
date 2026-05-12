@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Menu Images</title>
+</head>
+<body>
+    <h1>Reset Menu Images</h1>
+    <p>Click the button below to reset menu images with authentic South Indian food images.</p>
+    <button onclick="resetImages()" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Reset Menu Images</button>
+    <p id="status"></p>
+
+    <script>
+        function resetImages() {
+            const defaultMenu = [
+                { id: 1, name: 'Idly', price: 30, image: 'https://www.vegrecipesofindia.com/wp-content/uploads/2013/05/idli-recipe-1.jpg' },
+                { id: 2, name: 'Dosa', price: 10, image: 'https://www.vegrecipesofindia.com/wp-content/uploads/2020/01/dosa-recipe-1.jpg' },
+                { id: 3, name: 'Vada', price: 5, image: 'https://www.vegrecipesofindia.com/wp-content/uploads/2013/05/medu-vada-recipe-1.jpg' },
+                { id: 4, name: 'Poori', price: 20, image: 'https://www.vegrecipesofindia.com/wp-content/uploads/2013/05/puri-recipe-1.jpg' },
+                { id: 5, name: 'Pongal', price: 40, image: 'https://www.vegrecipesofindia.com/wp-content/uploads/2013/05/ven-pongal-recipe-1.jpg' },
+                { id: 6, name: 'Juice', price: 20, image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&h=300&fit=crop&q=80' },
+                { id: 7, name: 'Coffee', price: 10, image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=400&h=300&fit=crop&q=80' },
+                { id: 8, name: 'Tea', price: 10, image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop&q=80' }
+            ];
+            
+            localStorage.setItem('menuItems', JSON.stringify(defaultMenu));
+            document.getElementById('status').textContent = 'Menu images reset successfully! Go back to index.html to see the changes.';
+        }
+    </script>
+</body>
+</html>
+
+

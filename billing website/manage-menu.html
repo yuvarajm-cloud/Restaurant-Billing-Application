@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMY Restaurant - Manage Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">PMY Restaurant</h1>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="manage-menu.html" class="active">Manage Menu</a></li>
+                <li><a href="cart.html">Cart <span id="cartCount" class="cart-badge">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h2 class="page-title">Manage Menu</h2>
+        
+        <!-- Add/Edit Form -->
+        <div class="form-section">
+            <h3 id="formTitle">Add New Menu Item</h3>
+            <form id="menuForm" class="menu-form">
+                <input type="hidden" id="itemId">
+                <div class="form-group">
+                    <label for="itemName">Item Name:</label>
+                    <input type="text" id="itemName" required>
+                </div>
+                <div class="form-group">
+                    <label for="itemPrice">Price (₹):</label>
+                    <input type="number" id="itemPrice" min="0" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="itemImage">Image URL:</label>
+                    <input type="text" id="itemImage" placeholder="Enter image URL">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Add Item</button>
+                    <button type="button" class="btn btn-secondary" id="cancelBtn" style="display: none;">Cancel</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Payment QR Code Settings -->
+        <div class="form-section" style="margin-top: 2rem;">
+            <h3>Payment QR Code Settings</h3>
+            <p style="color: #7f8c8d; margin-bottom: 1rem;">Upload or set your payment QR code so customers can scan to pay directly to your account.</p>
+            <div class="form-group">
+                <label for="paymentQRCode">QR Code Image URL or File:</label>
+                <input type="text" id="paymentQRCode" placeholder="Enter QR code image URL (e.g., images/qrcode.jpg)">
+                <small style="color: #7f8c8d; display: block; margin-top: 0.5rem;">Or place your QR code image in the images folder and enter the path (e.g., images/myqrcode.jpg)</small>
+            </div>
+            <div class="form-group">
+                <label>Current QR Code:</label>
+                <div id="currentQRPreview" style="margin-top: 1rem;">
+                    <img id="qrPreviewImage" src="" alt="QR Code Preview" style="max-width: 200px; width: 100%; height: auto; border: 2px solid #ddd; border-radius: 8px; padding: 10px; background: white; display: none;">
+                    <p id="noQRMessage" style="color: #7f8c8d;">No QR code set yet.</p>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" class="btn btn-primary" id="saveQRCodeBtn">Save QR Code</button>
+            </div>
+        </div>
+
+        <!-- Menu Items List -->
+        <div class="menu-list-section">
+            <h3>Menu Items</h3>
+            <div class="menu-items-list" id="menuItemsList">
+                <!-- Menu items will be dynamically loaded here -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="manage-menu.js"></script>
+    <script src="qr-payment.js"></script>
+</body>
+</html>
+

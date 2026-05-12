@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Menu Images</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        #status {
+            margin-top: 20px;
+            padding: 15px;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <h1>Update Menu Images to Local Files</h1>
+    <p>Click the button below to update all menu items to use local images from the images folder.</p>
+    <button onclick="updateImages()">Update All Images</button>
+    <div id="status"></div>
+
+    <script>
+        function updateImages() {
+            const defaultMenu = [
+                { id: 1, name: 'Idly', price: 30, image: 'images/073cb7168fbb1efe61f830d8f7dc1240.jpg' },
+                { id: 2, name: 'Dosa', price: 10, image: 'images/6a26596d569a3e2dbaf851d14b517f08.jpg' },
+                { id: 3, name: 'Vada', price: 5, image: 'images/6ece8d9a9ad234ea9813cd29397ae44f.jpg' },
+                { id: 4, name: 'Poori', price: 20, image: 'images/95c58a20486f96a9ea1ae25f692e9ef5.jpg' },
+                { id: 5, name: 'Pongal', price: 40, image: 'images/f69698a26bac4f460c86d7108532cfa2.jpg' },
+                { id: 6, name: 'Juice', price: 20, image: 'https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=400&h=300&fit=crop&q=80' },
+                { id: 7, name: 'Coffee', price: 10, image: 'https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?w=400&h=300&fit=crop&q=80' },
+                { id: 8, name: 'Tea', price: 10, image: 'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=300&fit=crop&q=80' }
+            ];
+            
+            // Get existing menu items
+            let existingItems = [];
+            const stored = localStorage.getItem('menuItems');
+            if (stored) {
+                existingItems = JSON.parse(stored);
+            }
+            
+            // Update each item with new image
+            const updatedItems = existingItems.map(item => {
+                const defaultItem = defaultMenu.find(d => d.name === item.name);
+                if (defaultItem) {
+                    return { ...item, image: defaultItem.image };
+                }
+                return item;
+            });
+            
+            // If no items exist, use default menu
+            const finalMenu = updatedItems.length > 0 ? updatedItems : defaultMenu;
+            
+            localStorage.setItem('menuItems', JSON.stringify(finalMenu));
+            
+            document.getElementById('status').innerHTML = 
+                '<strong>Success!</strong> All menu images have been updated to use local files.<br>' +
+                'Go back to <a href="index.html">index.html</a> to see the changes.<br>' +
+                'If images still don\'t show, refresh the page (Ctrl+F5 or Cmd+Shift+R).';
+        }
+    </script>
+</body>
+</html>
+
+

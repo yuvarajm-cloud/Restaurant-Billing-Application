@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMY Restaurant - Invoice</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">PMY Restaurant</h1>
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">Menu</a></li>
+                <li><a href="manage-menu.html">Manage Menu</a></li>
+                <li><a href="cart.html">Cart <span id="cartCount" class="cart-badge">0</span></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="invoice-container">
+            <div class="invoice-header">
+                <h1>PMY Restaurant</h1>
+                <p class="invoice-subtitle">Invoice</p>
+            </div>
+            
+            <div class="invoice-info">
+                <div class="info-row">
+                    <span>Date:</span>
+                    <span id="invoiceDate"></span>
+                </div>
+                <div class="info-row">
+                    <span>Time:</span>
+                    <span id="invoiceTime"></span>
+                </div>
+            </div>
+
+            <div class="invoice-items">
+                <table class="invoice-table">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoiceItemsBody">
+                        <!-- Invoice items will be dynamically loaded here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="invoice-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="invoiceSubtotal">₹0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Grand Total:</span>
+                    <span id="invoiceTotal">₹0.00</span>
+                </div>
+            </div>
+
+            <!-- Payment QR Code Section -->
+            <div class="payment-qr-section">
+                <h3>Scan to Pay</h3>
+                <p>Scan the QR code below to make payment</p>
+                <div class="qr-code-display" id="paymentQRCode">
+                    <img id="paymentQRImage" src="" alt="Payment QR Code" style="max-width: 300px; width: 100%; height: auto; border: 2px solid #ddd; border-radius: 8px; padding: 10px; background: white;">
+                    <p style="color: #7f8c8d; margin-top: 10px; font-size: 0.9rem;" id="qrCodeMessage">QR code not set. Please set it in Manage Menu.</p>
+                </div>
+            </div>
+
+            <div class="invoice-actions">
+                <button class="btn btn-primary" onclick="window.print()">Print Invoice</button>
+                <button class="btn btn-secondary" id="openQRScannerInvoice">Scan Customer QR</button>
+                <a href="index.html" class="btn btn-secondary">Back to Menu</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- QR Scanner Modal -->
+    <div id="qrModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Scan QR Code</h3>
+            <div id="qr-reader"></div>
+            <div id="qr-result"></div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="script.js"></script>
+    <script src="invoice.js"></script>
+    <script src="qr-scanner.js"></script>
+    <script src="qr-payment.js"></script>
+</body>
+</html>
+
