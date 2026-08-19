@@ -30,7 +30,6 @@ This project goes beyond a basic restaurant website.
 
 It demonstrates practical implementation of:
 
-* 🧾 Digital billing and invoice generation
 * 🛒 Shopping cart state management
 * 🍛 Dynamic menu rendering
 * ✏️ CRUD-based menu management
