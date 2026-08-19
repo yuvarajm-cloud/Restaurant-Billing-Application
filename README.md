@@ -7,16 +7,16 @@
 </p>
 
 <p align="center">
-  A responsive restaurant billing application built as part of my self-learning journey in JavaScript and web development.
+  A hands-on project built to strengthen my JavaScript, browser API and basic DevOps knowledge.
 </p>
 
 ---
 
-## 📌 About the Project
+# 📌 Overview
 
-**PMY Restaurant Billing System** is a self-learning web application that I built to practice developing a more complete business-oriented web application using **HTML, CSS and JavaScript**.
+**PMY Restaurant Billing System** is a self-learning web application that I built to practice developing a business-oriented application using **HTML, CSS and JavaScript**.
 
-The project simulates a simple restaurant billing workflow where users can:
+The project simulates a simple restaurant billing workflow:
 
 ```text
 Browse Menu
@@ -34,27 +34,29 @@ View Payment QR
 Scan QR Code
 ```
 
-The project also includes a menu management interface where menu items can be added, edited and deleted.
+The application also includes a menu management interface where menu items can be added, edited and deleted.
 
 ---
 
 # 🎯 Why I Built This
 
-I built this project to understand how common business application features can be implemented using frontend technologies.
+I wanted to move beyond static webpages and understand how different frontend concepts work together inside a practical application.
 
-Instead of creating only static web pages, I wanted to practice building:
+Through this project, I explored:
 
-* Interactive interfaces
-* Dynamic data rendering
-* Cart functionality
+* Dynamic UI rendering
+* JavaScript application logic
+* Shopping cart functionality
 * CRUD operations
 * Invoice generation
-* QR-code functionality
-* Browser data persistence
-* Responsive layouts
-* Docker-based application serving
+* QR-code workflows
+* Browser LocalStorage
+* Camera-based QR scanning
+* Responsive design
+* Docker containerization
+* Nginx web serving
 
-This project became a practical way for me to learn by building and experimenting.
+This project is part of my **self-learning journey**, where I learn concepts by building practical applications.
 
 ---
 
@@ -62,9 +64,9 @@ This project became a practical way for me to learn by building and experimentin
 
 ## 🍛 Dynamic Restaurant Menu
 
-The application displays restaurant menu items dynamically.
+The application displays menu items dynamically.
 
-Each item contains:
+Each item can contain:
 
 * Food name
 * Price
@@ -73,7 +75,7 @@ Each item contains:
 
 ---
 
-## 🛒 Shopping Cart
+# 🛒 Shopping Cart
 
 Users can:
 
@@ -82,15 +84,15 @@ Users can:
 * Decrease quantity
 * Remove items
 * View total quantity
-* View total price
+* Calculate total price
 
-The cart dynamically updates as users interact with it.
+The cart updates dynamically as users interact with the application.
 
 ---
 
 # 🧾 Invoice Generation
 
-The application generates an invoice based on the current cart.
+The application generates an invoice based on the selected cart items.
 
 The invoice includes:
 
@@ -114,25 +116,25 @@ This helped me practice dynamic calculations and generating UI content from Java
 
 ---
 
-# 💳 QR Payment
+# 💳 QR Payment Workflow
 
 The application includes a QR payment workflow.
 
-A payment QR code can be configured through the menu management interface and displayed to the user during the billing process.
+A payment QR code can be configured and displayed during the billing process.
 
 ```text
 Order
- ↓
+  ↓
 Cart
- ↓
+  ↓
 Invoice
- ↓
+  ↓
 Payment QR
- ↓
+  ↓
 Customer Payment
 ```
 
-This feature was implemented as a learning exercise to understand how QR-based workflows can be integrated into web applications.
+This feature was implemented as a learning exercise to understand how QR-based workflows can be integrated into a web application.
 
 ---
 
@@ -143,18 +145,18 @@ The application also includes a camera-based QR scanner.
 It can:
 
 * Request camera access
-* Use a supported device camera
+* Access a supported device camera
 * Detect QR codes
 * Decode QR information
 * Display the scanned result
 
-This functionality helped me explore browser camera APIs and third-party QR scanning libraries.
+This allowed me to explore browser camera functionality and QR scanning libraries.
 
 ---
 
 # ⚙️ Menu Management
 
-The project includes a dedicated menu management interface.
+The project includes a menu management interface for practicing CRUD operations.
 
 ### Create
 
@@ -162,7 +164,7 @@ Add new menu items.
 
 ### Read
 
-Display existing menu items.
+View existing menu items.
 
 ### Update
 
@@ -173,28 +175,26 @@ Edit menu information.
 Remove menu items.
 
 ```text
-                Menu Management
-                       │
-          ┌────────────┼────────────┐
-          ↓            ↓            ↓
-        CREATE       UPDATE       DELETE
-          │            │            │
-          └────────────┼────────────┘
-                       ↓
-                  LocalStorage
-                       ↓
-                  Menu Display
+                 MENU MANAGEMENT
+                        │
+          ┌─────────────┼─────────────┐
+          ↓             ↓             ↓
+        CREATE        UPDATE        DELETE
+          │             │             │
+          └─────────────┼─────────────┘
+                        ↓
+                   LocalStorage
+                        ↓
+                   Menu Display
 ```
-
-This was my practical introduction to **CRUD operations**.
 
 ---
 
 # 💾 LocalStorage
 
-The project uses browser **LocalStorage** for data persistence.
+The project uses browser **LocalStorage** to persist client-side data.
 
-The application stores information such as:
+Information such as:
 
 ```text
 Menu Items
@@ -202,15 +202,17 @@ Cart
 Payment QR Configuration
 ```
 
-This helped me understand how browser-based applications can maintain state without a backend database.
+can be stored locally.
+
+This helped me understand browser-based state persistence without a backend database.
 
 ---
 
 # 🐳 Docker & Nginx
 
-As part of my learning, I also experimented with containerizing the application.
+As part of my self-learning journey, I also experimented with containerizing the application.
 
-The project includes a Docker configuration using **Nginx** to serve the static website.
+The project includes a Docker configuration using **Nginx** to serve the static web application.
 
 ```text
 Application Files
@@ -228,7 +230,7 @@ This gave me practical exposure to basic containerization and web-server concept
 
 # 🧠 What I Learned
 
-### HTML
+## HTML5
 
 * Page structure
 * Forms
@@ -236,17 +238,17 @@ This gave me practical exposure to basic containerization and web-server concept
 * Semantic elements
 * Interactive components
 
-### CSS
+## CSS3
 
 * Responsive layouts
 * Flexbox
-* Grid
+* CSS Grid
 * Media queries
 * Cards
-* Modals
+* Forms
 * Mobile layouts
 
-### JavaScript
+## JavaScript
 
 * DOM manipulation
 * Event handling
@@ -259,13 +261,13 @@ This gave me practical exposure to basic containerization and web-server concept
 * Calculations
 * Form handling
 
-### Browser APIs
+## Browser APIs
 
 * LocalStorage
 * Camera access
 * QR scanning
 
-### DevOps Basics
+## DevOps Basics
 
 * Docker
 * Docker images
@@ -278,27 +280,73 @@ This gave me practical exposure to basic containerization and web-server concept
 # 🏗️ Application Architecture
 
 ```text
-                    PMY Restaurant
-                          │
-             ┌────────────┴────────────┐
-             │                         │
-          Customer                  Staff
-             │                         │
-             ↓                         ↓
-        Restaurant Menu          Manage Menu
-             │                         │
-             ↓                         ↓
-           Cart                    CRUD Items
-             │                         │
-             ↓                         ↓
-          Invoice                 LocalStorage
-             │
-             ↓
-        Payment QR
-             │
-             ↓
-        QR Scanner
+                     PMY RESTAURANT
+                           │
+              ┌────────────┴────────────┐
+              │                         │
+          CUSTOMER                    STAFF
+              │                         │
+              ↓                         ↓
+        Restaurant Menu           Manage Menu
+              │                         │
+              ↓                         ↓
+             Cart                   CRUD Items
+              │                         │
+              ↓                         ↓
+           Invoice                LocalStorage
+              │
+              ↓
+         Payment QR
+              │
+              ↓
+         QR Scanner
 ```
+
+---
+
+# 🔄 Complete Application Flow
+
+```text
+                 ┌───────────────┐
+                 │ Restaurant UI │
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │     Menu      │
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │      Cart     │
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │    Invoice    │
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │  Payment QR   │
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │  QR Scanner   │
+                 └───────────────┘
+```
+
+---
+
+# 🛠️ Technology Stack
+
+| Technology        | Purpose                   |
+| ----------------- | ------------------------- |
+| **HTML5**         | Application structure     |
+| **CSS3**          | Styling and responsive UI |
+| **JavaScript**    | Application functionality |
+| **LocalStorage**  | Client-side persistence   |
+| **HTML5 QR Code** | QR scanning               |
+| **Docker**        | Containerization          |
+| **Nginx**         | Web server                |
+| **Git**           | Version control           |
+| **GitHub**        | Source code management    |
 
 ---
 
@@ -341,68 +389,26 @@ billing-web-main/
 
 ---
 
-# 🛠️ Technologies Used
-
-| Technology    | Purpose                   |
-| ------------- | ------------------------- |
-| HTML5         | Application structure     |
-| CSS3          | Styling and responsive UI |
-| JavaScript    | Application functionality |
-| LocalStorage  | Client-side persistence   |
-| HTML5 QR Code | QR scanning               |
-| Docker        | Containerization          |
-| Nginx         | Web server                |
-| Git           | Version control           |
-| GitHub        | Source code management    |
-
----
-
-# 🔄 Complete Application Flow
-
-```text
-                    ┌───────────────┐
-                    │ Restaurant UI │
-                    └───────┬───────┘
-                            ↓
-                    ┌───────────────┐
-                    │     Menu      │
-                    └───────┬───────┘
-                            ↓
-                    ┌───────────────┐
-                    │      Cart     │
-                    └───────┬───────┘
-                            ↓
-                    ┌───────────────┐
-                    │    Invoice    │
-                    └───────┬───────┘
-                            ↓
-                    ┌───────────────┐
-                    │  Payment QR   │
-                    └───────┬───────┘
-                            ↓
-                    ┌───────────────┐
-                    │  QR Scanner   │
-                    └───────────────┘
-```
-
----
-
 # ▶️ How to Run
 
-### Clone the repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/YOUR_USERNAME/billing-web-main.git
 ```
 
-### Open the project
+## 2. Open the Project
+
+Navigate to:
 
 ```text
 billing-web-main/
 └── billing website/
 ```
 
-You can use the included:
+### Windows
+
+Run:
 
 ```text
 start-server.bat
@@ -414,19 +420,19 @@ or:
 start-server-and-open.bat
 ```
 
-to launch the application on Windows.
+The included scripts provide an easier way to launch the project locally.
 
 ---
 
-# 🐳 Run Using Docker
+# 🐳 Run with Docker
 
-Navigate to the project directory:
+Navigate to the website directory:
 
 ```bash
 cd "billing website"
 ```
 
-Build the image:
+Build the Docker image:
 
 ```bash
 docker build -t pmy-restaurant .
@@ -466,20 +472,20 @@ Responsive CSS techniques were used to adapt the interface to different screen s
 
 # 📸 Screenshots
 
-> Add screenshots of the actual application here.
+Add screenshots of the actual application here.
 
-Recommended:
+Recommended structure:
 
 ```text
 screenshots/
 │
-├── menu.png
-├── cart.png
-├── invoice.png
-├── payment-qr.png
-├── qr-scanner.png
-├── manage-menu.png
-└── mobile.png
+├── 01-menu.png
+├── 02-cart.png
+├── 03-invoice.png
+├── 04-payment-qr.png
+├── 05-qr-scanner.png
+├── 06-menu-management.png
+└── 07-mobile.png
 ```
 
 Example:
@@ -488,20 +494,36 @@ Example:
 ## 📸 Screenshots
 
 ### 🍛 Restaurant Menu
-![Restaurant Menu](screenshots/menu.png)
+![Restaurant Menu](screenshots/01-menu.png)
 
 ### 🛒 Shopping Cart
-![Shopping Cart](screenshots/cart.png)
+![Shopping Cart](screenshots/02-cart.png)
 
 ### 🧾 Invoice
-![Invoice](screenshots/invoice.png)
+![Invoice](screenshots/03-invoice.png)
 
 ### 💳 QR Payment
-![QR Payment](screenshots/payment-qr.png)
+![QR Payment](screenshots/04-payment-qr.png)
 
 ### ⚙️ Menu Management
-![Menu Management](screenshots/manage-menu.png)
+![Menu Management](screenshots/06-menu-management.png)
 ```
+
+---
+
+# 🧪 Challenges I Practiced
+
+| Challenge                      | Concept Practiced           |
+| ------------------------------ | --------------------------- |
+| Dynamic menu rendering         | JavaScript DOM manipulation |
+| Cart calculations              | JavaScript logic            |
+| Maintaining cart state         | LocalStorage                |
+| Managing menu items            | CRUD operations             |
+| Generating invoices            | Dynamic UI generation       |
+| QR functionality               | Browser APIs                |
+| Camera scanning                | QR scanning library         |
+| Containerizing the application | Docker                      |
+| Serving the application        | Nginx                       |
 
 ---
 
@@ -509,43 +531,43 @@ Example:
 
 This project is currently a **client-side self-learning application**.
 
-Possible future improvements include:
+My future improvements would include:
 
-### Backend
+## Backend
 
 * Node.js
 * Express.js
 * REST APIs
 
-### Database
+## Database
 
 * MongoDB
 * PostgreSQL
 * MySQL
 
-### Authentication
+## Authentication
 
 * User login
 * Admin authentication
 * Role-based access control
 
-### Restaurant Features
+## Restaurant Features
 
 * Order management
 * Kitchen order display
 * Inventory management
 * Table management
 * Customer management
-* Sales reports
+* Sales analytics
 
-### Payments
+## Payments
 
 * Razorpay integration
 * Payment verification
 * Transaction history
 * Server-side payment validation
 
-### Cloud & DevOps
+## Cloud & DevOps
 
 * AWS deployment
 * Docker
@@ -558,11 +580,18 @@ Possible future improvements include:
 
 # ⚠️ Project Scope
 
-This is a **self-learning project** created to practice frontend development, JavaScript, browser APIs and basic deployment concepts.
+This is a **self-learning project** created to practice frontend development, JavaScript, browser APIs and basic DevOps concepts.
 
 It is **not a production restaurant POS system**.
 
-The current version uses LocalStorage and client-side logic. A production implementation would require a secure backend, database, authentication and server-side payment verification.
+The current version uses LocalStorage and client-side logic. A production implementation would require:
+
+* Secure backend
+* Database
+* Authentication
+* Server-side validation
+* Secure payment integration
+* Payment verification
 
 ---
 
@@ -609,11 +638,11 @@ Kubernetes
 
 ---
 
-## ⭐ Learning Through Building
+## 🚀 Learning Through Building
 
-> I use self-learning projects to turn concepts into practical applications and understand how different technologies work together.
+> **Learn → Build → Debug → Improve → Understand**
 
-This project helped me move beyond basic HTML/CSS exercises and experiment with application logic, state management, browser APIs, CRUD functionality and containerized deployment.
+I built this project to turn individual web development concepts into a practical application and gain hands-on experience with frontend development, browser APIs, CRUD functionality and containerization.
 
 ---
 
