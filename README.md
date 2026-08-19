@@ -597,8 +597,14 @@ GitHub
 Building practical projects as part of my continuous self-learning journey in:
 
 ```text
-Front-end Development
-Web design
+Cloud Computing
+DevOps
+Web Development
+Linux
+AWS
+Azure
+Docker
+Kubernetes
 ```
 
 ---
